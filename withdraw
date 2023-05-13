@@ -1,0 +1,75 @@
+import time
+
+print("""\33[1;32mKBC BANKNOTE - KBC BANKBILJET\33[0m
+
+Choose how many of each denomination of banknote you receive. 
+The smallest denomination for banknotes is 5 euros and the largest 500 euros.
+""")
+input("Insert Your Card and Press \33[1;32mENTER\33[0m")
+print()
+withdraw = int(input("How much cash do you want? : "))
+print()
+
+if withdraw >= 500:
+    print("500 euro :", withdraw // 500,"Banknote")
+    withdraw %= 500
+
+if withdraw >= 200:
+    print("200 euro :", withdraw // 200,"Banknote")
+    withdraw %= 200
+
+if withdraw >= 100:
+    print("100 euro :", withdraw // 100,"Banknote")
+    withdraw %= 100
+
+if withdraw >= 50:
+    print("50 euro :", withdraw // 50,"Banknote")
+    withdraw %= 50
+
+if withdraw >= 20:
+    print("20 euro :", withdraw // 20,"Banknote")
+    withdraw %= 20
+
+if withdraw >= 10:
+    print("10 euro :", withdraw // 10,"Banknote")
+    withdraw %= 10
+
+if withdraw >= 5:
+    print("5 euro :", withdraw // 5,"Banknote")
+    withdraw %= 5
+
+if withdraw > 0:
+    print()
+    print("Sorry, exact amount cannot be dispensed.")
+    time.sleep(0.7)
+    print("Loading....")
+    time.sleep(0.7)
+    print("Transaction has been canceled...")
+    time.sleep(0.7)
+    print("Thank You")
+    exit()
+    
+
+cash = input("\nDo you want to withdraw? Yes or No [Y / N] : ")
+if cash.lower() == "y":
+    print()
+    print("Loading....")
+    time.sleep(0.7)
+    print("Successful...")
+    time.sleep(1.5)
+    print()
+    print("Printing Receipt")
+    print("""
+                                                         █
+░▀▀█▀▀░▒█░▒█░█▀▀▄░▒█▄░▒█░▒█░▄▀░░░░░▒█░░▒█░▒█▀▀▀█░▒█░▒█░░░█
+░░▒█░░░▒█▀▀█▒█▄▄█░▒█▒█▒█░▒█▀▄░░░░░░▒▀▄▄▄▀░▒█░░▒█░▒█░▒█░░░▀
+░░▒█░░░▒█░▒█▒█░▒█░▒█░░▀█░▒█░▒█░░░░░░░▒█░░░▒█▄▄▄█░░▀▄▄▀░░░▄
+""")
+    exit()
+else:
+    print()
+    print("Loading....")
+    time.sleep(0.7)
+    print("transaction has been canceled...")
+    print("Thank You")
+    exit()
